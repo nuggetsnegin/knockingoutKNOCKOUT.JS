@@ -1,5 +1,4 @@
 const ClickCounterViewModel = function() {
-  const imgURL = "http://placekitten.com/200/300";
   this.numberOfClicks = ko.observable(0);
 
   this.registerClick = () => {
@@ -16,3 +15,18 @@ const ClickCounterViewModel = function() {
 };
 
 ko.applyBindings(new ClickCounterViewModel());
+
+const ViewModel = function(first, last) {
+  this.firstName = ko.observable(first);
+  this.lastName = ko.observable(last);
+
+  this.fullName = ko.pureComputed(function() {
+    // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
+    return this.firstName() + " " + this.lastName();
+  }, this);
+};
+
+ko.applyBindings(
+  new ViewModel("Planet", "Earth"),
+  document.getElementById("nameInput")
+);

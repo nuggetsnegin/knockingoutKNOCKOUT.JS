@@ -6,20 +6,32 @@
     <title>Document</title>
   </head>
   <body>
-    <div>
-      You've clicked <span data-bind="text: numberOfClicks"></span> times
+    <div class="nameInput" id="nameInput">
+      <p>First name: <input data-bind="value: firstName" /></p>
+      <p>Last name: <input data-bind="value: lastName" /></p>
+      <h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
     </div>
 
-    <!-- <img
-      data-bind="visible: showImage"
-      src="http://placekitten.com/200/300"
-      alt="place holder kitten"
-    /> -->
-    <button data-bind="click: registerClick, disable: suprise">
-      Click me for a suprise! 🥰
-    </button>
+    <div class="clicker" id="clicker">
+      <div>
+        You've clicked <span data-bind="text: numberOfClicks"></span> times
+      </div>
+      <div data-bind="visible: shouldShowMessage">
+        You will see this message only when "shouldShowMessage" holds a true
+        value.
+      </div>
 
-    <button data-bind="click: resetClicks">Again?</button>
+      <!-- <img
+          data-bind="visible: showImage"
+          src="http://placekitten.com/200/300"
+          alt="place holder kitten"
+        /> -->
+      <button data-bind="click: registerClick, disable: suprise">
+        Click me for a suprise! 🥰
+      </button>
+
+      <button data-bind="click: resetClicks">Again?</button>
+    </div>
 
     <script src="/js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
