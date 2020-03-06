@@ -1,4 +1,5 @@
 const ClickCounterViewModel = function() {
+  const imgURL = "http://placekitten.com/200/300";
   this.numberOfClicks = ko.observable(0);
 
   this.registerClick = () => {
@@ -10,7 +11,6 @@ const ClickCounterViewModel = function() {
   };
 
   this.suprise = ko.pureComputed(function() {
-    console.log(this.numberOfClicks());
     return this.numberOfClicks() >= Math.floor(Math.random() * 10) + 3;
   }, this);
 };
