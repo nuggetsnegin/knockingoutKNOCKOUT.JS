@@ -7,17 +7,15 @@
   </head>
   <body>
     <div>
-      You've clicked <span data-bind="text: numberOfClicks">&nbsp;</span> times
+      You've clicked <span data-bind="text: numberOfClicks"></span> times
     </div>
 
-    <button data-bind="click: registerClick, disable: hasClickedTooManyTimes">
-      Click me
+    <button data-bind="click: registerClick, disable: suprise">
+      Click me for a suprise! 🥰
     </button>
 
-    <div data-bind="visible: hasClickedTooManyTimes">
-      That's too many clicks! Please stop before you wear out your fingers.
-      <button data-bind="click: resetClicks">Reset clicks</button>
-    </div>
+    <button data-bind="click: resetClicks">Again?</button>
+
     <script src="/js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="js/script.js"></script>

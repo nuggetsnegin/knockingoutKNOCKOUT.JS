@@ -1,16 +1,17 @@
 const ClickCounterViewModel = function() {
   this.numberOfClicks = ko.observable(0);
 
-  this.registerClick = function() {
+  this.registerClick = () => {
     this.numberOfClicks(this.numberOfClicks() + 1);
   };
 
-  this.resetClicks = function() {
+  this.resetClicks = () => {
     this.numberOfClicks(0);
   };
 
-  this.hasClickedTooManyTimes = ko.pureComputed(function() {
-    return this.numberOfClicks() >= 3;
+  this.suprise = ko.pureComputed(function() {
+    console.log(this.numberOfClicks());
+    return this.numberOfClicks() >= Math.floor(Math.random() * 10) + 3;
   }, this);
 };
 
