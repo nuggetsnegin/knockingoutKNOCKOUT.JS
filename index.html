@@ -13,9 +13,9 @@
   </head>
   <body>
     <h1>Knocking out Knockout</h1>
-    <h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
+    <h2>Hello, <span data-bind="text: name"></span>!</h2>
 
-    <div class="nameInput" id="nameInput">
+    <!-- <div class="nameInput" id="nameInput">
       <p>First name: <input data-bind="value: firstName" /></p>
       <p>Last name: <input data-bind="value: lastName" /></p>
     </div>
@@ -26,17 +26,18 @@
           You've clicked <span data-bind="text: numberOfClicks"></span> times
         </p>
       </div>
+      -->
 
       <!-- <img
           data-bind="visible: showImage"
           src="http://placekitten.com/200/300"
           alt="place holder kitten"
         /> -->
-      <button data-bind="click: registerClick, disable: suprise">
+      <!-- <button data-bind="click: registerClick, disable: suprise">
         Click me for a suprise! 🥰
       </button>
 
-      <button class="again" data-bind="click: resetClicks">Again? 🤩</button>
+      <button class="again" data-bind="click: resetClicks">Again? 🤩</button> -->
     </div>
 
     <script src="/js/jquery.min.js"></script>
