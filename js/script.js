@@ -17,8 +17,8 @@
 // ko.applyBindings(new ClickCounterViewModel());
 
 const myViewModel = {
-  name: "Negin",
-  age: 12
+  name: ko.observable("Negin"),
+  age: ko.observable(12)
 };
 ko.applyBindings(myViewModel);
 ko.applyBindings(myViewModel, document.getElementById("binding-test"));
