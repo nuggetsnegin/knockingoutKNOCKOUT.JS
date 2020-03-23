@@ -20,9 +20,11 @@ const myViewModel = {
   name: ko.observable("Negin"),
   age: ko.observable(12)
 };
-ko.applyBindings(myViewModel);
+
 ko.applyBindings(myViewModel, document.getElementById("binding-test"));
 
+myViewModel.name("Bob");
+ko.applyBindings(myViewModel);
 // const ViewModel = function(first, last) {
 //   this.firstName = ko.observable(first);
 //   this.lastName = ko.observable(last);
